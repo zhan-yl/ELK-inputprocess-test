@@ -1,0 +1,24 @@
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /home/zhanyl/examples-master/Graph/apache_logs_security_analysis/data/access.log
+  document_type: logs
+  harvester_limit: 100
+  close_eof: true
+
+output.elasticsearch:
+  hosts: ["lzyl1:9200"]
+  index: "ingest-pipeline"
+  username: elastic
+  password: zylelk
+  template.enabled: true
+  template.name: secrepo
+  template.path: "secrepo.json"
+  template.overwrite: true
+  pipeline: secrepo_pipeline
+
+setup.template.name: "secrepo"
+setup.template.pattern: "secrepo*"
+
+#output.logstash:
+#  hosts: ["lzyl1:5044"]

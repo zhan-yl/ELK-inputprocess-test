@@ -1,0 +1,48 @@
+{
+    "description": "secrepo pipeline",
+    "processors": [
+        {
+            "grok": {
+                "field": "message",
+                "patterns": [
+                    "%{COMBINEDAPACHELOG}"
+                ],
+                "ignore_failure": true
+            }
+        },
+        {
+            "date": {
+                "field": "timestamp",
+                "formats": ["MMM dd HH:mm:ss","dd/MMM/YYYY:HH:mm:ss Z"],
+                "ignore_failure": true
+            }
+        },
+        {
+            "user_agent": {
+                "field": "agent",
+                "target_field": "user_agent",
+                "ignore_failure": true
+            }
+        },
+        {
+            "geoip": {
+                "field": "clientip",
+                "target_field": "geoip",
+                "ignore_failure": true
+            }
+        },
+        {
+            "remove": {
+                "field": "timestamp",
+                "ignore_failure": true
+            }
+        },
+        {
+            "remove": {
+                "field": "agent",
+                "ignore_failure": true
+            }
+        }
+
+    ]
+}
