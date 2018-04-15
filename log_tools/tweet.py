@@ -7,10 +7,10 @@ import sys
 
 
 #Twitter API credentials
-consumer_key = "rNTU1jwlX3Bm8B9Dvyds8NRMk"
-consumer_secret = "Im4DvJRxJsgxHYKbE2jgvZaxhtlfNPCK9OxAH6fKxzqjK8sYV4"
-access_key = "876048186854563840-i0oqgXNi6qOx5g1e1H1cHjacAkv7dij"
-access_secret = "0ac4EmhNXZ7L23apJBYIY9blQuoaQRRhcMibYk7HNrSgX"
+consumer_key = "you need to field in"
+consumer_secret = "you need to field in"
+access_key = "you need to field in"
+access_secret = "you need to field in"
 
 
 def get_all_tweets(screen_name):
